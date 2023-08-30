@@ -10,12 +10,6 @@ client = discord.Client()
 
 load_dotenv()
 
-def play_song():
-    response = requests.get("https://dog.ceo/api/breeds/image/random")
-    fox = response.json()
-    print(fox)
-    pic = fox['message']
-    return song_wav
 
 def meme_gen():
     response = requests.get("https://meme-api.herokuapp.com/gimme")
@@ -60,6 +54,13 @@ def throw_dice():
         response = dice
     return response
 
+
+def play_song():
+    response = requests.get("https://dog.ceo/api/breeds/image/random")
+    fox = response.json()
+    print(fox)
+    pic = fox['message']
+    return song_wav
 
 @client.event
 async def on_ready():
